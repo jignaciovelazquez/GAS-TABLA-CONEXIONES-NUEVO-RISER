@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reformas de Red</title>
+</head>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+<body>
+
+
+    <div class="container-xxl text-center">
+
+        <div class="row p-2" style="background-color: #335EFF;">
+            <!---------------- HEADER ---------------------------------->
+            <div class="col-12 rounded bg-white">
+                <div class="row align-items-start">
+                    <div class="col-4 align-self-center">
+
+                        <img src='https://i.postimg.cc/rFYhmWT9/logo-GPSfull.png' border='0' alt='logo-GPSfull'
+                            class="img-fluid " style="max-height: 100px" />
+
+                    </div>
+
+                    <div class="col-6 align-self-center">
+                        <h3 style="color:black">Tabla de Conexiones Montantes FTTH</h3>
+                    </div>
+
+                    <div class="col-2 align-self-center d-none d-md-block">
+                        <h5 style="color:black">Al servicio de</h5>
+                        <img src="https://i.postimg.cc/gcsSCQBQ/telecentro-350x183.png" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!--------------------------------------BODY--------------------------------------------------------->
+            <div class="col-md-12 pt-3 pb-5" style="background-color: #C2CAE5;">
+
+                <form id="FORMULARIO" class="row g-2 needs-validation" onsubmit="return false" action="PRUEBA()"
+                    novalidate>
+
+                    <div class="col-12 position-relative">
+                        <div class="row">
+                            <div class="input-group">
+                                <label for="TIPO" class="col-sm-2 col-form-label text-start">Tipo de Diseño:</label>
+                                <div class="col-sm-4">
+                                    <select class="form-select" id="TIPO" required>
+                                        <option selected disabled value="">Seleccione</option>
+                                        <option value="1">ARMADO</option>
+                                        <option value="2">RECONVERSION</option>
+                                    </select>
+                                    <div class="invalid-tooltip">
+                                        ¡Debes ingresar el Tipo de Diseño!
+                                    </div>
+                                </div>
+                                <label for="NRISER" class="col-sm-2 col-form-label text-end">Nro RISER: </label>
+                                <div class="col-sm-2 ms-2">
+                                    <select class="form-select" id="NRISER" required>
+                                        <option selected disabled value="">Seleccione</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                    <div class="invalid-tooltip">
+                                        ¡Debes ingresar el Tipo de Diseño!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="RISERCAJAS" class="col-12 position-relative">
+                    </div>
+
+                    <div class="col-12 pt-2">
+                        <div class="row">
+                            <div class="col-6 d-grid gap-2">
+                                <button id="GENERAR" type="submit" class="btn btn-success">GENERAR</button>
+
+                            </div>
+                            <div class="col-6 d-grid gap-2">
+                                <button id="BORRAR" type="button" class="btn btn-danger">BORRAR</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 pt-2">
+                        <div class="col-6 offset-sm-3 d-grid gap-2">
+                            <button id="GIRAR" type="button" class="btn btn-primary" hidden>GIRAR</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <!--------------------------------------- TABLA ------------------------->
+
+            <div id="TABLA" class="col-10 position-relative mt-3">
+            </div>
+
+        </div>
+
+
+
+
+        <div class="row" style="background-color: #335EFF;">
+            <!--------------------------------------- FOOTER ------------------------->
+            <div class="col align-self-center">
+                <div class="row mt-3">
+                    <div class="col-sm-12 ">
+                        <h6 style="color:white">Desarrollado por Gestion de Procesos y Servicios S.A. al servicio de
+                            TELECENTRO</h6>
+                    </div>
+                    <div class="row mt-">
+                        <div class="col-sm-6 offset-sm-3">
+                            <h6 style="color:white">By Ing. Ignacio Velazquez</h6>
+                            <h6 style="color:white">jvelazquez@gdp.com.ar</h6>
+                        </div>
+                        <div class="col-sm-1 offset-sm-2">
+                            <h5 style="color:white">V1.0</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="./JavaScript.html.js"></script>
+        <!---------<?!= include('JavaScript'); ?>---->
+
+</body>
+
+</html>
