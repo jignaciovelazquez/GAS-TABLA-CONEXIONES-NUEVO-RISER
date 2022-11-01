@@ -34,7 +34,7 @@ let cajas = 1;
 
 document.getElementById("FORMULARIO").addEventListener('submit', () => {
 
-    if ((document.getElementById("TIPO").value == "") || (document.getElementById("NRISER").value == "")) {
+    if ((document.getElementById("TIPO").value == "") || (document.getElementById("NRISER").value == "") || (document.getElementById("PARKING").value == "") || (document.getElementById("DIRECCION").value == "")) {
         alert("Debe completar todos los campos")
         return
     }
@@ -81,6 +81,8 @@ document.getElementById("FORMULARIO").addEventListener('submit', () => {
 
         totalPuertos = 0;
     }
+
+    aux = 1;
 
     document.getElementById("GIRAR").hidden = false;
 
@@ -243,7 +245,16 @@ document.getElementById("RISERCAJAS").addEventListener('change', () => {
 
                 ElementoPadre.append(Cajaxpiso);
 
-                document.getElementById("YOFC" + contadorCaja).value = "CEC-" + contadorCaja;
+                if (document.getElementById("DIRECCION").value == 2) {
+
+                    let w = parseInt(TotalCajas, 10) + 1 - parseInt(contadorCaja, 10);
+
+                    document.getElementById("YOFC" + contadorCaja).value = "CEC-" + w;
+
+                } else {
+                    document.getElementById("YOFC" + contadorCaja).value = "CEC-" + contadorCaja;
+                }
+
 
                 contadorCaja++;
             }
@@ -256,20 +267,6 @@ document.getElementById("RISERCAJAS").addEventListener('change', () => {
 
 document.getElementById("BORRAR").addEventListener('click', () => {
     limpiar();
-})
-
-document.getElementById("GIRAR").addEventListener('click', () => {
-
-    let girarTabla = document.getElementById('TABLA');
-    if (flag == 0) {
-        girarTabla.style.transform = 'rotate(270deg)';
-        flag = 1;
-
-    }
-    else {
-        girarTabla.style.transform = 'rotate(0deg)';
-        flag = 0;
-    }
 })
 
 
@@ -366,6 +363,10 @@ function generarTabla() {
                     Nparking = parking;
                     Npuerto = "-";
                     Letrasalida = "-";
+
+                    if (document.getElementById("PARKING").value == "NO") {
+                        Nparking = "-";
+                    }
                 }
 
                 contPelos++
@@ -459,3 +460,14 @@ function formatoPelos(contPelos, riserActual) {
     return output;
 
 }
+
+document.getElementById("GIRAR").addEventListener("click", function () {
+    html2canvas(document.getElementById("TABLA")).then(function (canvas) {
+        var anchorTag = document.createElement("a");
+        document.body.appendChild(anchorTag);
+        anchorTag.download = "TablaConexiones.jpg";
+        anchorTag.href = canvas.toDataURL();
+        anchorTag.target = '_blank';
+        anchorTag.click();
+    });
+});
