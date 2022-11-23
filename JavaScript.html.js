@@ -1,3 +1,5 @@
+
+
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
     'use strict'
@@ -18,6 +20,14 @@
     })
 })()
 
+//Star
+window.addEventListener('DOMContentLoaded', () => {
+
+    const toast = new bootstrap.Toast(document.getElementById("liveToast"));
+    toast.show();
+})
+
+
 //Variables
 
 let anterior = [];
@@ -28,6 +38,8 @@ let totalPuertos = 0;
 let aux = 1;
 let buffer = 1;
 let cajas = 1;
+let num = 5;
+
 
 
 //Eventos
@@ -148,6 +160,8 @@ document.getElementById("NRISER").addEventListener('change', () => {
                                             <option value="4">4</option>
                                             <option value="5">5</option>
                                             <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
                                         </select>
                                         <div class="invalid-tooltip">
                                             ¡Debes ingresar el Nro de Cajas conectadas al Riser!
